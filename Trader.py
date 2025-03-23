@@ -3,6 +3,7 @@ from typing import List
 import string
 import jsonpickle
 
+
 class Trader:
     def run(self, state: TradingState):
         try:
