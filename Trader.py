@@ -22,30 +22,6 @@ class Trader:
                 order_depth: OrderDepth = state.order_depths[product]
                 orders: List[Order] = []
 
-                # check arbitrage
-                    # two pointers
-                sorted_sell = [[key, abs(value)] for key, value in sorted(order_depth.sell_orders.items())]
-                sorted_buy = [[key, abs(value)] for key, value in sorted(order_depth.buy_orders.items())]
-                if sorted_sell[0][0] < sorted_buy[-1][0]:
-                    print("there is no arbitrage")
-                else:
-                    i = 0  # sell
-                    j = 0  # buy
-                    while i < len(sorted_sell) and j < len(sorted_buy):
-                        # check if sell < buy
-                        while j < len(sorted_buy) and (sorted_sell[i][0] >= sorted_buy[j][0] or not sorted_buy[j][1]):
-                            j += 1
-                        if j < len(sorted_buy) and sorted_sell[i][0] < sorted_buy[j][0]:
-                            # we have a trade
-                            amount = min(sorted_buy[j][1], sorted_sell[i][1])
-                            print(f"we have a trade {sorted_buy[j]} and {sorted_sell[i]} for {amount} amount \n")
-                            orders.append(Order(product, sorted_sell[i][0], amount))
-                            orders.append(Order(product, sorted_buy[j][0], -amount))
-                            sorted_buy[j][1] -= amount
-                            sorted_sell[i][1] -= amount
-                        if not sorted_sell[i][1]:
-                            i += 1
-
 
                 # check current portfolio
 
