@@ -1,0 +1,2 @@
+[console_scripts]
+prosperity3submit = prosperity3submit.__main__:main

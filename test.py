@@ -1,6 +1,6 @@
 from datamodel import Listing, OrderDepth, Trade, TradingState
 
-from fourier_bot import Trader
+from chat_bot import Trader
 
 timestamp = 1000
 

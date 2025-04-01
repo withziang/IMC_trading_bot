@@ -23,9 +23,9 @@ class Trader:
             orders: List[Order] = []
             
             # limit is 50
-            if product == 'KELP' and current_kelp_ind >= 50 and previous_data.trade_frequency_count == 10:     # change this
+            if product == 'KELP' and current_kelp_ind >= 50 and previous_data.trade_frequency_count == 100:     # change this
                 # predict the future 5 index 
-                kelp_price_future = self.fourier_cust(current_kelp_ind + 5)
+                kelp_price_future = self.fourier_cust(current_kelp_ind + 100)
                 current_kelp_position = state.position[product] if product in state.position else 0
                 buy_orders = order_depth.buy_orders
                 sell_orders = order_depth.sell_orders
@@ -38,7 +38,7 @@ class Trader:
                     current_price = stat.median(list(buy_orders.keys()) + list(sell_orders.keys()))
                     print(f"current_price: {current_price}")
 
-                    if current_price > kelp_price_future:
+                    if current_price < kelp_price_future:
                         # we buy all
                         for sell_price in sell_orders:
                             amount = min(50 - current_kelp_position, abs(sell_orders[sell_price]))
