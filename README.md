@@ -17,10 +17,10 @@ The repository is organized to support:
 - datamodel.py # Data model and utility functions (Fourier bot included)
 - james_bot.py # last year bot
 - test.py # Testing 
--  trader_round1.py # Bot used in round 1
+- trader_round1.py # Bot used in round 1
 - trader_round2.py # Bot used in round 2
 - trader_round3.py # Bot used in round 3
--  trader_round4.py # Bot used in round 4
+- trader_round4.py # Bot used in round 4
 
 
 
