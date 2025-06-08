@@ -31,11 +31,9 @@ The repository is organized to support:
 **Goal:** Compete in the IMC Prosperity rounds using fully automated trading bots.
 
 ### How It Works
-- Each round (`trader_round1.py`, `trader_round2.py`, etc.) implements a different version of the bot based on learnings from previous rounds.
-- Strategies implemented include:
-  - Arbitrage (`arbitrage_bot.py`)
-  - Fourier-based signal trading (`datamodel.py`)
-  - Custom strategies (example in `james_bot.py`)
+- Algo trading: each round prosperity will give us different commodities and different rules. And we need to build a trading bot within 4 days.
+- Manual trading: make a model to predict other player's decision and maximizing our profit.
+
 
 ### Running Algo Bots
 - use prosperity3bt from [https://www.piwheels.org/project/prosperity3bt/]
